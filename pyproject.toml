@@ -1,14 +1,18 @@
 [tool.poetry]
-name = "data-structures-project"
+name = "zaberov-dz-13-1-3"
 version = "0.1.0"
 description = ""
-authors = ["kirillskyeng <kirill.netreba@skyeng.ru>"]
+authors = ["zaberov.dv <zaberov.dv@internet.ru>"]
 readme = "README.md"
-packages = [{include = "data_structures_project"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pytest-cov = "^4.1.0"
+coverage = "^7.3.2"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
 
 [build-system]
 requires = ["poetry-core"]
