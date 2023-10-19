@@ -1,14 +1,14 @@
-from src.stack import Node, Stack
+from src.stack import Stack
 
 if __name__ == '__main__':
     stack = Stack()
     stack.push('data1')
     data = stack.pop()
 
-    # стэк стал пустой
+    # стек стал пустой
     assert stack.top is None
 
-    # pop() удаляет элемент и возвращает данные удаленного элемента
+    # pop() удаляет элемент и возвращает данные удалённого элемента.
     assert data == 'data1'
 
     stack = Stack()
@@ -19,5 +19,5 @@ if __name__ == '__main__':
     # теперь последний элемента содержит данные data1
     assert stack.top.data == 'data1'
 
-    # данные удаленного элемента
+    # данные удалённого элемента
     assert data == 'data2'

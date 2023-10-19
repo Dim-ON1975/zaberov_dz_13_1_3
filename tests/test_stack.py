@@ -16,6 +16,8 @@ def test_class_node():
 
 def test_class_stack():
     stack = Stack()
+
+    # tests_push
     stack.push('data1')
     stack.push('data2')
     stack.push('data3')
@@ -28,3 +30,25 @@ def test_class_stack():
     with pytest.raises(AttributeError) as exif:
         str(stack.top.next_node.next_node.next_node.next_node.data)
     assert "'NoneType' object has no attribute 'data'" in str(exif.value)
+
+    # tests_pop
+    stack = Stack()
+    stack.push('data1')
+    data = stack.pop()
+
+    # стек стал пустой
+    assert stack.top is None
+
+    # pop() удаляет элемент и возвращает данные удалённого элемента.
+    assert data == 'data1'
+
+    stack = Stack()
+    stack.push('data1')
+    stack.push('data2')
+    data = stack.pop()
+
+    # теперь последний элемента содержит данные data1
+    assert stack.top.data == 'data1'
+
+    # данные удалённого элемента
+    assert data == 'data2'
