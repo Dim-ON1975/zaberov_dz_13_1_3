@@ -30,6 +30,8 @@ def test_class_stack():
     with pytest.raises(AttributeError) as exif:
         str(stack.top.next_node.next_node.next_node.next_node.data)
     assert "'NoneType' object has no attribute 'data'" in str(exif.value)
+    # проверка __str__
+    assert str(stack) == 'Stack(data4)'
 
     # tests_pop
     stack = Stack()
@@ -45,7 +47,11 @@ def test_class_stack():
     stack = Stack()
     stack.push('data1')
     stack.push('data2')
+    # проверка __str__
+    assert str(stack) == 'Stack(data2)'
     data = stack.pop()
+    # проверка __str__
+    assert str(stack) == 'Stack(data1)'
 
     # теперь последний элемента содержит данные data1
     assert stack.top.data == 'data1'

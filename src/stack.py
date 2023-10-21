@@ -51,3 +51,9 @@ class Stack:
         Если нет верхнего элемента, то стек пуст
         """
         return self.top is None
+
+    def __str__(self):
+        """
+        Последний ("верхний") элемент в стеке
+        """
+        return f'{self.__class__.__name__}({self.top.data})'
