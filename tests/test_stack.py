@@ -58,3 +58,11 @@ def test_class_stack():
 
     # данные удалённого элемента
     assert data == 'data2'
+
+    # Удаляем все элементы в стеке
+    while stack.top:
+        stack.pop()
+    # Вывод при отсутствии элементов
+    with pytest.raises(ValueError) as exif:
+        str(stack.pop())
+    assert "Стек пуст!" in str(exif.value)
