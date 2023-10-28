@@ -50,7 +50,7 @@ class Queue:
         """
         # если количество экземпляров в очереди = 0
         if self.size == 0:
-            raise ValueError("Очередь пуста")
+            return None
         else:
             # Получаем значение первого узла в очереди, который находится "голове".
             temp_data = self.head.data

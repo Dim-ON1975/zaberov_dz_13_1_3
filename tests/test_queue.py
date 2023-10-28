@@ -52,7 +52,5 @@ def test_class_queue():
     while queue.head:
         queue.dequeue()
     # Вывод при отсутствии элементов
-    with pytest.raises(ValueError) as exif:
-        str(queue.dequeue())
-    assert "Очередь пуста" in str(exif.value)
+    assert queue.dequeue() is None
 
